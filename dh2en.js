@@ -3,7 +3,6 @@
 
 	This algorithm transliterates Thaana script to Roman characters (Latin)
 
-	This work is licensed under GPL v2
 	___________________
 
 	Ayaz, 2014
