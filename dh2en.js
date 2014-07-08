@@ -73,23 +73,7 @@ var dh2en = function(input) {
         "ޝ": "sh"
     };
 
-    //var _punctuations = "][\\\'،./÷}{|:\"><؟)(".split('');
-    var _punctuations = "asd".split('');
-
-    var invert = function(obj) {
-        var new_obj = {};
-        for (var prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                new_obj[obj[prop]] = prop;
-            }
-        }
-        return new_obj;
-    };
-
-    /* _consonants = invert(_consonants);
-    _vowels = invert(_vowels);
-    _alif_compounds = invert(_alif_compounds);*/
-
+    var _punctuations = "][\\\'،./÷}{|:\"><؟)(".split('');
 
     function transliterate(input) {
         // replace zero width non joiners
@@ -151,18 +135,6 @@ var dh2en = function(input) {
         }
 
         return input;
-    }
-
-    // ______ get the keys of an object literal
-    function _getKeys(o) {
-        var keys = [];
-        for (var k in o) {
-            if (o.hasOwnProperty(k)) {
-                keys.push(k);
-            }
-        }
-
-        return keys;
     }
 
     // _____ construct
