@@ -73,7 +73,26 @@ var dh2en = function(input) {
         "ޝ": "sh"
     };
 
-    var _punctuations = "][\\\'،./÷}{|:\"><؟)(".split('');
+    var _punctuations = {
+        "]": "[",
+        "[": "]",
+        "\\": "\\",
+        "\'": "\'",
+        "،": ",",
+        ".": ".",
+        "/": "/",
+        "÷": "",
+        "}": "{",
+        "{": "}",
+        "|": "|",
+        ":": ":",
+        "\"": "\"",
+        ">": "<",
+        "<": ">",
+        "؟": "?",
+        ")": ")",
+        "(": "("
+    };
 
     function transliterate(input) {
         // replace zero width non joiners
@@ -130,8 +149,10 @@ var dh2en = function(input) {
             return c.toUpperCase();
         });
 
-        for (var p in _punctuations) {
-            console.log(_punctuations[p]);
+        for (var k in _punctuations) {
+            if (!_punctuations.hasOwnProperty(k)) continue;
+            p = _punctuations[k];
+            input = input.replace(k, p);
         }
 
         return input;
