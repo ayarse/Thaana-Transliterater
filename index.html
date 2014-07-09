@@ -3,10 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dhi2En Demo</title>
+	<link rel="stylesheet" href="">
 	<script src="dh2en.js"></script>
 	<style>
-		body {
+		@import url('http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+		/*body {
 			font-family: Helvetica, Arial, "Open Sans", sans-serif;
 			text-align: center;
 			background: ghostwhite;
@@ -16,19 +19,21 @@
 			width: 45%;
 			height: 500px;
 			font-size: 1.5em;
-		}
+		}*/
 	</style>
 </head>
 <body>
-	<h4>Thaana Romanization Script Demo</h4>
-	<textarea name="from" id="from" cols="30" rows="10">Write some thaana text here.</textarea>
-	<textarea name="to" id="to" cols="30" rows="10">Watch the magic happen here.</textarea>
+	 <div class="container">
+		<h4>Thaana Romanization Script Demo</h4>
+		<textarea class="col-lg-6" name="from" id="from" cols="30" rows="10">Write some thaana text here.</textarea>
+		<textarea class="col-lg-6" name="to" id="to" cols="30" rows="10">Watch the magic happen here.</textarea>
+	</div>
 	<script>
 	document.getElementById('to').value = dh2en(document.getElementById('from').value);
 	document.getElementById('from').onkeyup = function() {
 		document.getElementById('to').value = dh2en(this.value);
 	};
 
-</script>
+	</script>
 </body>
 </html>
